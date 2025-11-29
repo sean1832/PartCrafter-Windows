@@ -46,10 +46,13 @@ conda activate partcrafter
 pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124
 ```
 Then, install other dependencies with the following command:
-```
+
+```bash
 git clone https://github.com/wgsxm/PartCrafter.git
 cd PartCrafter
-bash settings/setup.sh
+bash settings/setup.sh # for Linux
+# OR
+./settings/setup.bat # for Windows
 ```
 If you do not have root access and use conda environment, you can install required graphics libraries with the following command:
 ```
