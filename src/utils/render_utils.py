@@ -1,6 +1,7 @@
 from src.utils.typing_utils import *
 
 import os
+import sys
 import numpy as np
 from PIL import Image
 import trimesh
@@ -11,7 +12,11 @@ from diffusers.utils.loading_utils import load_video
 import torch
 from torchvision.utils import make_grid
 
-os.environ['PYOPENGL_PLATFORM'] = 'egl'
+
+# Set PYOPENGL_PLATFORM to 'egl' for Linux
+# Windows users will receive import errors if this is set.
+if sys.platform.startswith("linux"):
+    os.environ["PYOPENGL_PLATFORM"] = "egl"
 
 def render(
     scene: pyrender.Scene,
